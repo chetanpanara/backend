@@ -8,7 +8,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb://localhost:27017/mywebsite')
+mongoose.connect('mongodb+srv://chetanpanara88:bB2FnofHFMwGfwFP@test-pro-db.uplux.mongodb.net/?retryWrites=true&w=majority&appName=test-pro-db')
+
+// mongoose.connect('mongodb://localhost:27017/mywebsite')
 
 app.post('/createuser', (req, res) => { 
   userModel.create(req.body)
