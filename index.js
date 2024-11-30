@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect(process.env.connection)
+mongoose.connect(process.env.CONNECTION)
 
 // mongoose.connect('mongodb://localhost:27017/mywebsite')
 
