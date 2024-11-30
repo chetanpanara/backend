@@ -1,14 +1,17 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const dotenv = require('dotenv')
 
-const userModel=require('./model/Users')
+const userModel = require('./model/Users')
+
+dotenv.config()
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect('mongodb+srv://chetanpanara88:bB2FnofHFMwGfwFP@test-pro-db.uplux.mongodb.net/?retryWrites=true&w=majority&appName=test-pro-db')
+mongoose.connect(process.env.connection)
 
 // mongoose.connect('mongodb://localhost:27017/mywebsite')
 
@@ -46,7 +49,7 @@ app.put('/updateuser/:id', (req, res) => {
   .catch(err=>res.json(err))
 })
 
-const port=process.env.PORT || 5001
-app.listen(port, () => { 
+
+app.listen(5001, () => { 
   console.log("server is running in 5001");
 })
